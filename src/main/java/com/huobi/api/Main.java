@@ -7,27 +7,12 @@ import java.util.List;
 import com.huobi.request.CreateOrderRequest;
 import com.huobi.request.DepthRequest;
 import com.huobi.request.IntrustOrdersDetailRequest;
-import com.huobi.response.Accounts;
-import com.huobi.response.AccountsResponse;
-import com.huobi.response.BalanceResponse;
-import com.huobi.response.BatchcancelResponse;
-import com.huobi.response.CurrencysResponse;
-import com.huobi.response.DepthResponse;
-import com.huobi.response.DetailResponse;
-import com.huobi.response.HistoryTradeResponse;
-import com.huobi.response.IntrustDetailResponse;
-import com.huobi.response.KlineResponse;
-import com.huobi.response.MatchresultsOrdersDetailResponse;
-import com.huobi.response.MergedResponse;
-import com.huobi.response.OrdersDetailResponse;
-import com.huobi.response.SymbolsResponse;
-import com.huobi.response.TimestampResponse;
-import com.huobi.response.TradeResponse;
+import com.huobi.response.*;
 
 public class Main {
 
-    static final String API_KEY = "KEY";
-    static final String API_SECRET = "SECRET";
+    static final String API_KEY = "";
+    static final String API_SECRET = "";
   
     
     public static void main(String[] args) {
@@ -42,12 +27,12 @@ public class Main {
     static void apiSample() {
         // create ApiClient using your api key and api secret:
         ApiClient client = new ApiClient(API_KEY, API_SECRET);
-        // get symbol list:
-        print(client.getSymbols());
-
+//         get symbol list:
+//        print(client.getSymbols());
+        List<Account> accounts222 = client.getAccounts();
         //获取 K 线
         //------------------------------------------------------ kline -------------------------------------------------------
-        KlineResponse kline = client.kline("btcusdt", "5min", "100");
+        KlineResponse kline = client.kline("ethusdt", "5min", "100");
         print(kline);
 
         //------------------------------------------------------ merged -------------------------------------------------------
